@@ -1,0 +1,8 @@
+<h3> Welcome to the </h3> <h1> REAL </h1> <h3> Chorus Foxes! </h3>
+
+<div>
+<% @decks.each do |deck|%>
+<a href="/decks/<%= deck.id%>"><%= deck.name %></a>
+<h1></h1>
+<% end %>
+</div>
