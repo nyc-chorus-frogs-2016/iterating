@@ -1,14 +1,18 @@
+<link rel="stylesheet" href="/css/application.css">
+<link rel="stylesheet" href="/css/normalize.css">
+
 <% if @errors %>
-<%= @errors %>
+	<%= @errors %>
 <% end %>
 
 <form action="/users" method = "post">
-  <ul>
-    <h1> Register </h1>
-    <li><input type='text' name ='first_name' placeholder ='First Name'/></li>
-    <li><input type='text' name ='last_name' placeholder ='Last Name'/></li>
-    <li><input type='text' name ='email' placeholder ='E-mail'/></li>
-    <li><input type='password' name ='password' placeholder ='Password'/></li>
-  </ul>
-  <input type = 'submit' value = 'Register'/>
+    <h2> Register </h2>
+    <div id = "container">
+		<input id = 'in' type='text' name ='first_name' placeholder ='First Name'/>
+		<input id = 'in' type='text' name ='last_name' placeholder ='Last Name'/>
+		<input id = 'in' type='text' name ='email' placeholder ='E-mail'/>
+		<input id = 'in' type='password' name ='password' placeholder ='Password'/>
+
+		<input class="button-primary" input type = 'submit' value = 'Register'/>
+	</div>
 </form>

@@ -31,15 +31,13 @@
     </form>
     <a href="/users/<%=current_user.id%>">Your Profile</a>
   <% else %>
-<form action="/sessions" method = "post">
-  <ul>
-    <h1> Log in </h1>
-    <li><input type='text' name ='email' placeholder ='E-mail'/></li>
-    <li><input type='password' name ='password' placeholder ='Password'/></li>
-  </ul>
+<form id = 'right' action="/sessions" method = "post">
+    <input id = 'inline' type='text' name ='email' placeholder ='E-mail'/>
+    <input id = 'inline' type='password' name ='password' placeholder ='Password'/>
   <input type = 'submit' value = 'log in'/>
 </form>
-<a href="/users/new">First time? Register now</a>
+
+<a id = 'righter' href="/users/new">First time here? Sign Up</a>
   <% end %>
   <%= yield %>
 </body>
