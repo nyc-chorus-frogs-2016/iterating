@@ -1,0 +1,14 @@
+<% if @errors %>
+<%= @errors %>
+<% end %>
+
+<form action="/users" method = "post">
+  <ul>
+    <h1> Register </h1>
+    <li><input type='text' name ='first_name' placeholder ='First Name'/></li>
+    <li><input type='text' name ='last_name' placeholder ='Last Name'/></li>
+    <li><input type='text' name ='email' placeholder ='E-mail'/></li>
+    <li><input type='password' name ='password' placeholder ='Password'/></li>
+  </ul>
+  <input type = 'submit' value = 'Register'/>
+</form>
