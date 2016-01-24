@@ -43,3 +43,8 @@ put "/decks/:deckid/cards/:cardid" do
   redirect "decks/#{params[:deckid]}"
 end
 
+
+delete "/decks/:deckid/cards/:cardid" do
+  Card.find_by(id: params[:cardid]).destroy
+  redirect "decks/#{params[:deckid]}"
+end

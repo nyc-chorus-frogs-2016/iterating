@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="/css/application.css">
+<link rel="stylesheet" href="/css/normalize.css">
+
+
 <form action="/decks/<%=@deck.id%>/cards/<%=@card.id%>" method = "post">
   <input type="hidden" name="_method" value="put">
     <h1>Question</h1>
@@ -6,3 +10,10 @@
     <input type='text' name ='answer' value="<%= @card.answer%>"/>
     <input type = 'submit' value = 'update card'/>
 </form>
+
+
+<form action="/decks/<%=@deck.id%>/cards/<%=@card.id%>" method = "post">
+  <input type="hidden" name="_method" value="delete">
+    <input type = 'submit' value = 'Delete Card'/>
+</form>
+

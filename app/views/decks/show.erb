@@ -1,16 +1,19 @@
-<h1> this deck's name is <%= @deck.name %> </h1>
-<h1> there are <%= @deck.cards.count %> cards </h1>
-<% @deck.cards.each do |card|%>
-  <%if @deck.id == nil%>
+<link rel="stylesheet" href="/css/application.css">
+<link rel="stylesheet" href="/css/normalize.css">
+
+<h1> <%= @deck.name %> </h1>
+<h3> There are <%= @deck.cards.count %> cards </h3>
+<h4><% @deck.cards.each do |card|%>
+  <%if @deck.user_id == nil %>
     <%=card.question%>
-  <%else%>
+  <%elsif @deck.user_id == current_user.id %>
     <a href="/decks/<%=@deck.id%>/cards/<%=card.id%>/edit"><%=card.question%></a>
   <%end%>
-<% end%>
+<% end%></h4>
 
-<%if @deck.id != nil %>
-<h1> click on a question to edit or delete</h1>
-<a href="/decks/<%=@deck.id%>}/cards/new">click here to add a card to this deck</a>
+<%if @deck.user_id == current_user.id %>
+<h4> Click on a question to edit or delete</h4>
+<a href="/decks/<%=@deck.id%>}/cards/new">Click here to add a card to this deck</a>
 <%end%>
 
 
@@ -19,6 +22,6 @@
   <input type = 'submit' value = 'Play Now'/>
 </form>
 <% else %>
-<a href="/users/new">You haven't registered. Click here to register!</a>
+<h1>Please login/register. </h1>
 <% end %>
 
