@@ -1,0 +1,8 @@
+<form action="/decks/<%=@deck.id%>/cards/<%=@card.id%>" method = "post">
+  <input type="hidden" name="_method" value="put">
+    <h1>Question</h1>
+    <input type='text' name ='question' value="<%= @card.question%>"/>
+    <h1>Answer</h1>
+    <input type='text' name ='answer' value="<%= @card.answer%>"/>
+    <input type = 'submit' value = 'update card'/>
+</form>

@@ -1,0 +1,20 @@
+<%if logged_in? %>
+<h1> Create a card for your <%=@deck.name%> deck</h1>
+
+<form action="/decks/<%=@deck.id%>/cards/new" method = "post">
+    <h1>Question</h1>
+    <input type='text' name ='question'/>
+    <h1>Answer</h1>
+    <input type='text' name ='answer'/>
+    <input type = 'submit' value = 'Create card'/>
+</form>
+
+<h1> Current cards included in this Deck:</h1>
+<% @deck.cards.each do |card| %>
+  <h1><%= card.question%></h1>
+  <%= card.answer%>
+<% end %>
+
+<%elsif %>
+  <h1>Please Login or register to create your own card</h1>
+<%end %>

@@ -1,0 +1,11 @@
+<%if logged_in? %>
+
+<form action="/decks" method = "post">
+    <h1> Name Your Deck </h1>
+    <input type='text' name ='name'/>
+    <input type = 'submit' value = 'Create'/>
+</form>
+
+<%elsif %>
+  <h1>Please Login or register to create your own deck</h1>
+<%end %>

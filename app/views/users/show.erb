@@ -3,7 +3,7 @@
 
 <h1>Your completed rounds:</h1>
 <% current_user.rounds.select {|round| round.finished_deck }.each do |round| %>
-  <h1>Deck Name <%= round.deck.name %></h1>
+  <h1><%= round.deck.name %></h1>
   <p>Started at <%= round.created_at %></p>
   <p>Total Cards: <%=round.deck.cards.count%></p>
   <p>Total Correct Guesses:<%=round.count_correct_guesses%></p>
@@ -13,7 +13,7 @@
 
 <h1>Your Outstanding rounds:</h1>
 <% current_user.rounds.select {|round| round.finished_deck == false }.each do |round| %>
-  <h1>Deck Name <%= round.deck.name %></h1>
+  <h1><%= round.deck.name %></h1>
   <p>Started at <%= round.created_at %></p>
   <p>Total Cards: <%=round.deck.cards.count%></p>
   <p>Total Correct Guesses:<%=round.count_correct_guesses%></p>

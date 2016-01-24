@@ -1,6 +1,18 @@
 <h1> this deck's name is <%= @deck.name %> </h1>
 <h1> there are <%= @deck.cards.count %> cards </h1>
-<h1> info about this deck: <%= @deck.description %> </h1>
+<% @deck.cards.each do |card|%>
+  <%if @deck.id == nil%>
+    <%=card.question%>
+  <%else%>
+    <a href="/decks/<%=@deck.id%>/cards/<%=card.id%>/edit"><%=card.question%></a>
+  <%end%>
+<% end%>
+
+<%if @deck.id != nil %>
+<h1> click on a question to edit or delete</h1>
+<a href="/decks/<%=@deck.id%>}/cards/new">click here to add a card to this deck</a>
+<%end%>
+
 
 <% if logged_in? %>
 <form action="/decks/<%=@deck.id%>" method = "post">
@@ -9,3 +21,4 @@
 <% else %>
 <a href="/users/new">You haven't registered. Click here to register!</a>
 <% end %>
+
