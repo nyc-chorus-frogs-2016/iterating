@@ -29,7 +29,7 @@
       <input type='hidden' name='_method' value='delete'/>
       <input type='submit' value='logout'/>
     </form>
-    <a href="/users/<%=current_user.id%>">Your Profile</a>
+    <a href="/userprofile">Your Profile</a>
   <% else %>
 <form action="/sessions" method = "post">
   <ul>
@@ -39,7 +39,7 @@
   </ul>
   <input type = 'submit' value = 'log in'/>
 </form>
-<a href="/users/new">First time? Register now</a>
+<a href="/users/new">First Time? Register now</a>
   <% end %>
   <%= yield %>
 </body>

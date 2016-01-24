@@ -15,3 +15,7 @@ post '/users' do
     erb :'users/new'
   end
 end
+
+get "/userprofile" do
+  erb :'users/show'
+end

@@ -3,7 +3,9 @@
 <h1> info about this deck: <%= @deck.description %> </h1>
 
 <% if logged_in? %>
-<a href="/rounds/<%=@new_round%>/cards/<%=@random_card.id%>">play now</a>
+<form action="/decks/<%=@deck.id%>" method = "post">
+  <input type = 'submit' value = 'Play Now'/>
+</form>
 <% else %>
 <a href="/users/new">You haven't registered. Click here to register!</a>
 <% end %>
