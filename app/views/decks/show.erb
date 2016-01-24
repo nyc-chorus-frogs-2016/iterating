@@ -6,7 +6,16 @@
 <h4> More info: <%= @deck.description %> </h4>
 
 <% if logged_in? %>
+<<<<<<< efd452391e1e059651fe18bc627837e38c83a06a
 <a href="/rounds/<%=@new_round%>/cards/<%=@random_card.id%>">Start Game</a>
 <% else %>
 <a href="/users/new">You aren't logged in. Click here to sign up!</a>
 <% end %>
+=======
+<form action="/decks/<%=@deck.id%>" method = "post">
+  <input type = 'submit' value = 'Play Now'/>
+</form>
+<% else %>
+<a href="/users/new">You haven't registered. Click here to register!</a>
+<% end %>
+>>>>>>> Complete User Pgae

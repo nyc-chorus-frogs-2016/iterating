@@ -29,15 +29,19 @@
       <input type='hidden' name='_method' value='delete'/>
       <input type='submit' value='logout'/>
     </form>
-    <a href="/users/<%=current_user.id%>">Your Profile</a>
+    <a href="/userprofile">Your Profile</a>
   <% else %>
 <form id = 'right' action="/sessions" method = "post">
     <input id = 'inline' type='text' name ='email' placeholder ='E-mail'/>
     <input id = 'inline' type='password' name ='password' placeholder ='Password'/>
   <input type = 'submit' value = 'log in'/>
 </form>
+<<<<<<< efd452391e1e059651fe18bc627837e38c83a06a
 
 <a id = 'righter' href="/users/new">First time here? Sign Up</a>
+=======
+<a href="/users/new">First Time? Register now</a>
+>>>>>>> Complete User Pgae
   <% end %>
   <%= yield %>
 </body>

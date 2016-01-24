@@ -9,7 +9,6 @@ post '/sessions' do
 
 end
 
-
 delete '/sessions/logout' do
   session.clear()
   redirect '/'
