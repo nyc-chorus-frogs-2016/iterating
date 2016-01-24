@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+<link rel="stylesheet" href="/css/application.css">
+<link rel="stylesheet" href="/css/normalize.css">
+
+=======
+>>>>>>> origin/master
   <% if logged_in? %>
     <% if authroized_player(@round.id) %>
       <%= @card.question %>
@@ -32,7 +38,11 @@
       <% end %>
 
       <% if @round.finished_deck %>
+<<<<<<< HEAD
+        <h1>Congrats you have finished the round. Below are the stats for this round:</h1>
+=======
         <h1>Congrats you have finished the round. Below is the stats for this round:</h1>
+>>>>>>> origin/master
         <p>Total Cards: <%=@round.deck.cards.count%></p>
         <p>Total Correct Guesses:<%=@round.count_correct_guesses%></p>
         <p>Total Correct Guesses on First try:<%=@round.count_correct_first_guesses%></p>
@@ -41,6 +51,13 @@
           <a href="/rounds/<%=@round.id%>/">next question</a>
       <% end %>
     <% else %>
+<<<<<<< HEAD
+      <h1>401: You are not authorized to acccess this card.</h1>
+    <% end %>
+    <% else %>
+    <h1>Please login/register to access this card.</h1>
+=======
       <h1>You are not the right player for this round.</h1>
     <% end %>
+>>>>>>> origin/master
   <% end %>

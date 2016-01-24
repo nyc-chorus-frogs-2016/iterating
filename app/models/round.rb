@@ -32,4 +32,8 @@ class Round < ActiveRecord::Base
     self.deck.cards.select {|card| card.guesses.where("round_id = ? AND is_correct = ?", self.id, true).count == 0}.sample
   end
 
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> origin/master

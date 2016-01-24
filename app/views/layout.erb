@@ -22,7 +22,7 @@
   <%= @error %>
   <% end %>
 
-    <a href="/">home</a>
+    <a href="/">Home</a>
   <% if logged_in? %>
     Hello <%=current_user.first_name%>
     <form action='/sessions/logout' method = 'post'>
@@ -32,6 +32,16 @@
     <a href="/userprofile">Your Profile</a>
   <% else %>
 <form id = 'right' action="/sessions" method = "post">
+<<<<<<< HEAD
+  <ul>
+    <h1> Log in </h1>
+    <li><input id = 'inline' type='text' name ='email' placeholder ='E-mail'/></li>
+    <li><input id = 'inline' type='password' name ='password' placeholder ='Password'/></li>
+  </ul>
+  <input type = 'submit' value = 'log in'/>
+</form>
+<a id = 'righter' href="/users/new">First time here? Sign Up</a>
+=======
     <input id = 'inline' type='text' name ='email' placeholder ='E-mail'/>
     <input id = 'inline' type='password' name ='password' placeholder ='Password'/>
   <input type = 'submit' value = 'log in'/>
@@ -42,6 +52,7 @@
 =======
 <a href="/users/new">First Time? Register now</a>
 >>>>>>> Complete User Pgae
+>>>>>>> origin/master
   <% end %>
   <%= yield %>
 </body>

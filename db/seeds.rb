@@ -36,4 +36,8 @@ Card.create(
   question: "Who is Phase 2 instructor?",
   answer: "Zack",
   deck_id: 2,
+<<<<<<< HEAD
   )
+=======
+  )
+>>>>>>> origin/master

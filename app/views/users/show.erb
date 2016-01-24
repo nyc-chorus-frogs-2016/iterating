@@ -1,9 +1,18 @@
+<<<<<<< HEAD
+<link rel="stylesheet" href="/css/application.css">
+<link rel="stylesheet" href="/css/normalize.css">
+=======
+>>>>>>> origin/master
 
 <%if logged_in? %>
 
 <h1>Your completed rounds:</h1>
 <% current_user.rounds.select {|round| round.finished_deck }.each do |round| %>
+<<<<<<< HEAD
+  <h1><%= round.deck.name %></h1>
+=======
   <h1>Deck Name <%= round.deck.name %></h1>
+>>>>>>> origin/master
   <p>Started at <%= round.created_at %></p>
   <p>Total Cards: <%=round.deck.cards.count%></p>
   <p>Total Correct Guesses:<%=round.count_correct_guesses%></p>
@@ -13,7 +22,11 @@
 
 <h1>Your Outstanding rounds:</h1>
 <% current_user.rounds.select {|round| round.finished_deck == false }.each do |round| %>
+<<<<<<< HEAD
+  <h1><%= round.deck.name %></h1>
+=======
   <h1>Deck Name <%= round.deck.name %></h1>
+>>>>>>> origin/master
   <p>Started at <%= round.created_at %></p>
   <p>Total Cards: <%=round.deck.cards.count%></p>
   <p>Total Correct Guesses:<%=round.count_correct_guesses%></p>
@@ -26,4 +39,10 @@
   <a href="/rounds/<%= round.id%>/">Continue this round</a>
 <% end%>
 
+<<<<<<< HEAD
+<%else %>
+<h1>Please login/register to view your profile.</h1>
 <% end %>
+=======
+<% end %>
+>>>>>>> origin/master
