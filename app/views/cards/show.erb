@@ -35,7 +35,7 @@
       <% end %>
 
       <% if @round.finished_deck %>
-        <h1>Congrats you have finished the round. Below is the stats for this round:</h1>
+        <h1>Congrats you have finished the round. Below are the stats for this round:</h1>
         <p>Total Cards: <%=@round.deck.cards.count%></p>
         <p>Total Correct Guesses:<%=@round.count_correct_guesses%></p>
         <p>Total Correct Guesses on First try:<%=@round.count_correct_first_guesses%></p>
@@ -44,6 +44,8 @@
           <a href="/rounds/<%=@round.id%>/">next question</a>
       <% end %>
     <% else %>
-      <h1>You are not the right player for this round.</h1>
+      <h1>401: You are not authorized to acccess this card.</h1>
     <% end %>
+    <% else %>
+    <h1>Please login/register to access this card.</h1>
   <% end %>

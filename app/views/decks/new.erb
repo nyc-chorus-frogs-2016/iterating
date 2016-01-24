@@ -9,6 +9,12 @@
     <input type = 'submit' value = 'Create'/>
 </form>
 
+<div>
+<% if @errors %>
+<h6>Deck Name Can't Be Blank!<h6>
+<% end %>
+</div>
+
 <%elsif %>
   <h1>Please Login or register to create your own deck</h1>
 <%end %>

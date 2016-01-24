@@ -8,14 +8,25 @@ get '/decks/:id/cards/new' do
 end
 
 post '/decks/:deckid/cards/new' do
-  deck = Deck.find_by(id: params[:deckid])
-  Card.create(question: params[:question], answer: params[:answer], deck_id: params[:deckid])
-  redirect "/decks/#{deck.id}/cards/new"
+  @deck = Deck.find_by(id: params[:deckid])
+  @new_card = Card.new(question: params[:question], answer: params[:answer], deck_id: params[:deckid])
+
+  if @new_card.save
+    redirect "/decks/#{@deck.id}/cards/new"
+  else
+    @errors = @new_card.errors.full_messages
+    erb :'cards/new'
+  end
 end
 
 post '/decks' do
-  new_deck = Deck.create(name: params[:name], user_id: current_user.id)
-  redirect "/decks/#{new_deck.id}/cards/new"
+  new_deck = Deck.new(name: params[:name], user_id: current_user.id)
+  if new_deck.save
+    redirect "/decks/#{new_deck.id}/cards/new"
+  else
+    @errors = new_deck.errors.full_messages
+    erb :'decks/new'
+  end
 end
 
 
@@ -30,21 +41,5 @@ post '/decks/:id' do
 end
 
 
-get "/decks/:deckid/cards/:cardid/edit" do
-  @deck = Deck.find_by(id: params[:deckid])
-  @card = Card.find_by(id: params[:cardid])
-  erb :'cards/edit'
-end
 
 
-put "/decks/:deckid/cards/:cardid" do
-  card = Card.find_by(id: params[:cardid])
-  card.update_attributes(question: params[:question], answer: params[:answer])
-  redirect "decks/#{params[:deckid]}"
-end
-
-
-delete "/decks/:deckid/cards/:cardid" do
-  Card.find_by(id: params[:cardid]).destroy
-  redirect "decks/#{params[:deckid]}"
-end
